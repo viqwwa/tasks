@@ -135,7 +135,9 @@ namespace task_10
 
             public T[] ToArray()
             {
-                return elementData;
+                T[] array = new T[elementCount];
+                Array.Copy(elementData, array, elementCount);
+                return array;
             }
 
             public T[] ToArray(T[] array)
