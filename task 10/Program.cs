@@ -39,6 +39,8 @@ namespace task_10
             public MyVector(T[] array)
             {
                 elementCount = array.Length;
+                elementData = array;
+                capacityIncrement = 0;
             }
 
             public void Add(T element)
@@ -51,7 +53,7 @@ namespace task_10
                 elementData[elementCount++] = element;
             }
 
-            public void addAll(T[] array)
+            public void AddAll(T[] array)
             {
                 foreach (T element in array)
                 {
@@ -165,7 +167,7 @@ namespace task_10
                     IncreaseCapacity();
                 }
 
-                for (int i = elementCount + 1; i > index; i--)
+                for (int i = elementCount - 1; i > index; i--)
                 {
                     elementData[i] = elementData[i - 1];
                 }
