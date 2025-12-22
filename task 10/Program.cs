@@ -308,6 +308,7 @@ namespace task_10
                     newElementData = new T[elementCount + capacityIncrement];
                 }
 
+                Array.Copy(elementData, newElementData, elementCount);
                 elementData = newElementData;
             }
         }
